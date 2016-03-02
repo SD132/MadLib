@@ -1,0 +1,29 @@
+storyFormat = """
+Once upon a time, {Character1} the {title}, saw a {animal}. The {animal} was very evil.
+It wore a hat and an evil mustache. {Character1} stepped on the tiny mine {animal}, then it exploded.
+{Character1} flew threw the air and landed at the {place}. Then he saw his wife {Character2} with
+{Character3}. Then, {Character4} started eating fish and dancing with a {animal}. 
+
+"""
+
+def tellstory():
+
+    pick = dict()
+    user('Character1',pick)
+    user('title',pick)
+    user('animal',pick)
+    user('place',pick)
+    user('Character2',pick)
+    user('Character3',pick)
+    user('Character4',pick)
+    story = storyFormat.format(**pick)
+    print (story)
+
+def user(cue, dictionary):
+
+    prompt = 'enter an example for ' + cue + ' :'
+    answer = input(prompt).strip()
+    dictionary[cue]= answer
+
+tellstory()
+input("press enter to end the program")
